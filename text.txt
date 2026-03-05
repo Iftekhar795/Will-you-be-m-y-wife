@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Wife?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            text-align: center;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+        .buttons {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #fff;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        #no-btn {
+            position: relative;
+            transition: transform 0.5s, top 0.5s, left 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Wife?</h1>
+    <div class="buttons">
+        <button id="yes-btn">Yes</button>
+        <button id="no-btn">No</button>
+    </div>
+    <script>
+        const noBtn = document.getElementById('no-btn');
+        noBtn.addEventListener('click', () => {
+            // Move it to a random position
+            const maxX = window.innerWidth - noBtn.offsetWidth;
+            const maxY = window.innerHeight - noBtn.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        });
+    </script>
